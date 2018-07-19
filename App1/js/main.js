@@ -103,7 +103,7 @@ function draw1() {
     //获取当前时间
     var now1 = new Date();
     var now2 = now1 - time;
-    var sec2 = now2 / 1000;
+    var sec2 = now2 /1000;
     var min2 = sec2 / 60;
     var hour2 = min2 / 60;
     hour2 >= 12 && (hour2 = hour2 - 12); //如果大于12  就减去12   && 前面的条件如果满足  就会执行后面的语句  相当于  if 
@@ -144,7 +144,7 @@ function draw1() {
     cans.restore();
     cans.save();
     //绘制小时指针
-    cans.rotate((Math.PI / 6) * hour2 + (Math.PI / 360) * min2 + (Math.PI / 21600) * sec2);
+    cans.rotate(Math.PI / 21600 * sec2);
     cans.lineWidth = 6;
     cans.beginPath();
     cans.moveTo(-10, 0);
@@ -153,7 +153,7 @@ function draw1() {
     cans.restore();
     cans.save();
     //绘制分钟指针
-    cans.rotate((Math.PI / 30) * min2 + (Math.PI / 1800) * sec2);
+    cans.rotate(Math.PI / 1800 * sec2 );
     cans.strokeStyle = "#29A8DE";
     cans.lineWidth = 4;
     cans.lineCap = "butt";
